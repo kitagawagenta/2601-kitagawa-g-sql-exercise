@@ -98,3 +98,30 @@ oroot@6359928682a9:/var/www/html# php run.php 1
 2, 1, 1, , 2024-01-13 10:00:00
 3, 2, 0, 2024-01-20 18:00:00, 2024-01-14 09:00:00
 4, 3, 1, 2024-01-18 18:00:00, 2024-01-14 11:00:00
+
+
+- Q2: 
+
+# 実行するSQL(今回はPHPでSQLクエリを実行するので不要)
+
+<!-- departmentsテーブルからidが３の行を削除する -->
+DELETE FROM departments
+WHERE id = 3;
+
+<!-- id = 3の行が削除されたという意味 -->
+Query OK, 1 row affected (0.01 sec)
+
+
+<!-- 結果 -->
+mysql> select * from departments
+    -> ;
++----+-------------+
+| id | name        |
++----+-------------+
+|  1 | Sales       |
+|  2 | Engineering |
++----+-------------+
+2 rows in set (0.01 sec)
+
+ # 実行コマンド
+ php run.php 2
