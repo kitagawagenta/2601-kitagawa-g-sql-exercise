@@ -123,5 +123,14 @@ mysql> select * from departments
 +----+-------------+
 2 rows in set (0.01 sec)
 
- # 実行コマンド
+# 実行コマンド
  php run.php 2
+
+# 出力結果
+
+ === Q2 ===
+--- Q2: departments ---
+|id|name|
+|---|---|
+|1|Sales|
+|2|Engineering|
