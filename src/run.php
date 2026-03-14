@@ -2,10 +2,15 @@
 
 require_once __DIR__ . '/vendor/autoload.php';
 
+require_once __DIR__ . '/Connection.php';
+
+use App\Connection;
+
 $arg = $argv[1] ?? null;
 
+// セットアップ処理（変更なし）
 if ($arg === '--setup') {
-    $pdo = connectDb();
+    $pdo = Connection::getPdo();
 
     $pdo->exec('DROP TABLE IF EXISTS tasks');
     $pdo->exec('DROP TABLE IF EXISTS employees');
@@ -50,22 +55,27 @@ if ($arg === '--setup') {
     exit;
 }
 
+// クラスの実行処理
 if ($arg !== null) {
     $class = "App\\Questions\\Q{$arg}";
+
     if (!class_exists($class)) {
         echo "Q{$arg} は存在しません\n";
         exit(1);
     }
-    echo "=== Q{$arg} ===\n";
+
+    // 装飾（=== Q1 ===）を削除し、実行のみ行う
     (new $class())->execute();
 } else {
+    // 全問一括実行時も装飾を削除
     for ($i = 1; $i <= 58; $i++) {
         $class = "App\\Questions\\Q{$i}";
         if (class_exists($class)) {
-            echo "=== Q{$i} ===\n";
             (new $class())->execute();
+            echo "\n"; // 問題ごとの区切りに改行だけ入れる
         }
     }
+<<<<<<< feature/4
 }
 
 function connectDb(): PDO
@@ -83,3 +93,6 @@ function connectDb(): PDO
         PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
     ]);
 }
+=======
+}
+>>>>>>> local

@@ -4,8 +4,9 @@ namespace App\Questions;
 
 use PDO;
 
-class Q1
+class Q1 extends BaseQuestion
 {
+<<<<<<< feature/4
     public function execute(): void
     {
         $host   = $_ENV['DB_HOST'] ?? 'mysql';
@@ -32,5 +33,15 @@ class Q1
         file_put_contents('answer_q1.txt', $output);
         
         echo "\n[OK] answer_q1.txt に結果を保存しました\n";
+=======
+public function execute(): void
+{
+    $tables = ['departments', 'employees', 'tasks'];
+
+    foreach ($tables as $table) {
+        $this->queryAndDisplay("SELECT * FROM {$table}", $table);
+        echo "\n";
+>>>>>>> local
     }
+}
 }
