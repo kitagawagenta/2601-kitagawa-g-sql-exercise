@@ -18,3 +18,5 @@ php run.php --setup
 # 5. Q1を実行
 php run.php 1
 ```
+
+- Q1: Done
