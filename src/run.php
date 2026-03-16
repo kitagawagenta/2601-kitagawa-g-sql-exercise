@@ -11,6 +11,7 @@ if ($arg === '--setup') {
     $pdo->exec('DROP TABLE IF EXISTS employees');
     $pdo->exec('DROP TABLE IF EXISTS departments');
 
+
     $pdo->exec('CREATE TABLE departments (
         id   INT PRIMARY KEY AUTO_INCREMENT,
         name VARCHAR(100) NOT NULL
