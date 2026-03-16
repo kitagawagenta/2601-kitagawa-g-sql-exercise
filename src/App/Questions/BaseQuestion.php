@@ -2,9 +2,6 @@
 
 namespace App\Questions;
 
-// Connection.phpを絶対パスで確実に読み込む
-require_once __DIR__ . '/../../Connection.php';
-
 use PDO;
 
 abstract class BaseQuestion
