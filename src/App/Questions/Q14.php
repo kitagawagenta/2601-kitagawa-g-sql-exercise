@@ -20,6 +20,6 @@ class Q14 extends BaseQuestion
              FROM employees
              ORDER BY id;",
             "employees"
-        );
+        );  
     }
 }
