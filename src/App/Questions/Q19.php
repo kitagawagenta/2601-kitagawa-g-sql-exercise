@@ -8,7 +8,7 @@ class Q19 extends BaseQuestion
   {
     $this->queryAndDisplay(
       "SELECT
-      DATE_ROMAT(created_at, '%Y%m%d') AS DATE_FORMAT
+      DATE_FORMAT(created_at, '%Y%m%d') AS DATE_FORMAT
       FROM tasks
       ORDER BY id;",
       "tasks"
