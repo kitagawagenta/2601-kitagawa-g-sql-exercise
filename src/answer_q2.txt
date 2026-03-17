@@ -1,5 +1,0 @@
---- Q2: departments ---
-|id|name|
-|---|---|
-|1|Sales|
-|2|Engineering|
