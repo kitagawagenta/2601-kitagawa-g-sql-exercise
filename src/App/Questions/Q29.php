@@ -12,7 +12,7 @@ class Q29 extends BaseQuestion
              FROM employees
              INNER JOIN departments
                 ON employees.department_id = departments.id;",
-            "employees × departments"
+            "employees INNER JOIN departments"
         );
 
         echo "\n";
@@ -23,7 +23,7 @@ class Q29 extends BaseQuestion
              FROM employees
              INNER JOIN tasks
                 ON employees.id = tasks.employee_id;",
-            "employees × tasks"
+            "employees INNER JOIN tasks"
         );
     }
 }
