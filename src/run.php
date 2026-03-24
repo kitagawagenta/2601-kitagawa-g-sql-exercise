@@ -34,14 +34,21 @@ if ($arg === '--setup') {
             created_at  DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
         )');
 
-        $pdo->exec("INSERT INTO departments VALUES (1, 'Sales'), (2, 'Engineering')");
+        $pdo->exec("INSERT INTO departments VALUES
+            (1, 'Sales'),
+            (2, 'Engineering'),
+            (3, ''),
+            (4, 'Marketing')");
+
+
 
         $pdo->exec("INSERT INTO employees (name, department_id, salary) VALUES
             ('Alice', 1, 350000),
             ('Bob',   1, 280000),
             ('Carol', 2, 420000),
-            ('Dave',  2, 310000),
-            ('Eve',   3, 290000)");
+            ('Dave',  3, 310000),
+            ('Eve',   5, 380000)");
+
 
         $pdo->exec("INSERT INTO tasks (employee_id, is_done, expires_at, created_at) VALUES
     (1, TRUE,  '2024-01-15 18:00:00', '2024-01-10 09:00:00'),
