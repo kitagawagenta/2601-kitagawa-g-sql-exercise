@@ -34,7 +34,7 @@ if ($arg === '--setup') {
             created_at  DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
         )');
 
-        $pdo->exec("INSERT INTO departments VALUES (1, 'Sales'), (2, 'Engineering')");
+        $pdo->exec("INSERT INTO departments VALUES (1, 'Sales'), (2, 'Engineering'),(3, 'Human Resources')");
 
         $pdo->exec("INSERT INTO employees (name, department_id, salary) VALUES
             ('Alice', 1, 350000),
@@ -48,7 +48,9 @@ if ($arg === '--setup') {
     (2, FALSE, NULL,                  '2024-01-10 10:00:00'),
     (4, FALSE, '2024-01-14 18:00:00', '2024-01-11 09:00:00'),
     (4, TRUE,  NULL,                  '2024-01-12 09:00:00'),
-    (1, TRUE,  '2024-01-16 18:00:00', '2024-01-13 09:00:00')");
+    (1, TRUE,  '2024-01-16 18:00:00', '2024-01-13 09:00:00'),
+    (3, FALSE, '2024-01-17 18:00:00', '2024-01-14 09:00:00'),
+    (5, TRUE,  NULL,                  '2024-01-15 09:00:00')");
 
 
         echo "セットアップが完了しました。\n";
